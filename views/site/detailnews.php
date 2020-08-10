@@ -159,17 +159,7 @@ if (!empty($checkCom)) {
                     <?php $statusZ = 'forRemove';  ?>
                     <?php endif;?>
                         <div class='commentsPlace <?= $statusZ?>' data-commentId='<?= $comment->id ?>' style='margin-bottom: 15px;font-size: 16px;background-color: #ffffff;padding:5px;border-radius: 5px'>
-                    <div class="popupNearComment" style="cursor: pointer">
-                        <span class="arrowForEditDeleteComment">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-<path d="M10 11.2808L13.5284 7.75249C13.865 7.41583 14.4108 7.41583 14.7475 7.75249C15.0842 8.08914 15.0842 8.63498 14.7475 8.97164L10.6096 13.1096C10.2729 13.4462 9.72708 13.4462 9.39043 13.1096L5.25249 8.97164C4.91584 8.63498 4.91584 8.08914 5.25249 7.75249C5.58915 7.41583 6.13499 7.41583 6.47164 7.75249L10 11.2808Z" fill="#25AE36"/>
-</svg>
-                        </span>
-                        <div class="editDeleteComment" style="display: none">
-                            <div style="cursor: pointer" class="editComment">Edit</div>
-                            <div style="cursor: pointer" class="deleteComment">Delete</div>
-                        </div>
-                    </div>
+
                     <div style="font-size: 12px;margin: 10px auto"></div>
                             <?php foreach ($comments as $comId) : ?>
                             <?php if ($comId['id'] == $comment['reply']) :?>
@@ -180,7 +170,7 @@ if (!empty($checkCom)) {
                             <div><span class="commentUserName"> <?= $comment->user->username ?></span><span><?=  $from ?></span></div>
                     <div class="greyPlaceComment">
                         <span class="likesCountForLikes"><img src="http://basic.loc/icons/like(2).svg" style="margin-right: 2px" width="10"><span class="countLikesComment"><?= $comment->like ?></span></span>
-                        <div class="textComment"><?= $comment->comment ?></div>
+                        <div class="textComment" style="margin-bottom: 15px"><span><?= $comment->comment ?></span></div>
                         <?php if (count($comment->image) > 0): ?>
                             <?php foreach ($comment->image as $im): ?>
                                 <?php $resSER = explode('.', $im->file_name);
@@ -608,11 +598,11 @@ if (!empty($checkCom)) {
                     </div>
 
                     <div class="editCommentText" style="display: none" >
-                        <div style="margin-bottom: 15px">
+                        <div class="inputForEditComment" style="margin-bottom: 15px">
                             <input type="text" class="commentText" value="<?= $comment->comment ?>">
                         </div>
-                        <button class="saveButtonForEdit btn btn-success">Save</button>
-                        <button class="cancelButtonForEdit btn btn-danger">Cancel</button>
+                        <button class="saveButtonForEdit btn btn-success btn-sm" style="height: 24px;padding: 2px;">Save</button>
+                        <button class="cancelButtonForEdit btn btn-danger btn-sm" style="height: 24px;padding: 2px;">Cancel</button>
                     </div>
                     <?php $color = 'lightgrey' ?>
                     <?php if ($comment->likes->user_id && $comment->likes->user_id) : ?>
@@ -624,7 +614,17 @@ if (!empty($checkCom)) {
                             <?php if($comment['status'] == 2):?>
                                 <?php $statusS = 'inline-block';  ?>
                             <?php endif;?>
+                            <div class="popupNearComment" style="cursor: pointer;display: inline-block">
+                        <span class="arrowForEditDeleteComment">
+                            More ...
+                        </span>
+                                <div class="editDeleteComment" style="display: none">
+                                    <div style="cursor: pointer" class="editComment">Edit</div>
+                                    <div style="cursor: pointer" class="deleteComment">Delete</div>
+                                </div>
+                            </div>
                             <span class="changedComment"><span style="display: <?= $statusS?>; color: #ff9c9c; font-size: 12px; margin-left: 12px;">Changed!</span></span>
+
                 </div>
             <?php endforeach; ?>
         </div>
@@ -635,7 +635,7 @@ if (!empty($checkCom)) {
             <?php $form = ActiveForm::begin(['id' => 'comment-form', 'options' => ['enctype' => 'multipart/form-data']]); ?>
             <div class="formDivForComment">
                 <span class="userNameReply" style="padding: 6px;"></span>
-                <?= $form->field($model, 'comment')->textarea()->label(" ") ?>
+                <?= $form->field($model, 'comment')->textarea(['style' => 'box-shadow: none;'])->label(" ") ?>
                 <?= $form->field($model, 'user_id')->hiddenInput(['value' => $_SESSION['__id']])->label(' ') ?>
                 <?= $form->field($model, 'task_id')->hiddenInput(['value' => $res['id']])->label(' ') ?>
                 <?= $form->field($model, 'reply')->hiddenInput(['class' => 'replyValue'])->label(' ') ?>

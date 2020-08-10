@@ -411,6 +411,7 @@ $(document).ready(()=>{
     $('body').on('click' , '.editComment' , function () {
         let commentId = $(this).closest('.commentsPlace').attr('data-commentid');
         $(this).closest('.commentsPlace ').find('.editCommentText').show();
+        $(this).closest('.commentsPlace').find('.textComment').find('span').css('display' , 'none');
     });
 
 
@@ -441,6 +442,7 @@ $(document).ready(()=>{
 
     $('body').on('click', '.cancelButtonForEdit' ,function () {
         $(this).closest('.editCommentText').hide();
+        $(this).closest('.commentsPlace').find('.editDeleteComment').css('display' , 'none');
     });
 
     $('body').on('click','.saveButtonForEdit', function() {
@@ -457,6 +459,9 @@ $(document).ready(()=>{
                     self.closest('.commentsPlace').find('.textComment').html(comVal);
                     self.closest('.commentsPlace').find('.editCommentText').hide();
                     self.closest('.commentsPlace').find('.changedComment').html(`<span style="display: inline-block; color: #ff9c9c; font-size: 12px; margin-left: 12px;">Changed!</span> `);
+                    self.closest('.commentsPlace').find('.textComment').css('display' , 'block');
+                    self.closest('.commentsPlace').find('.editDeleteComment').css('display' , 'none');
+
                 } else {
                     alert('Try again :( ');
                 }
