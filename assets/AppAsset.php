@@ -21,8 +21,14 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'css/jquery.emojipicker.a.css',
+        'css/jquery.emojipicker.css',
+        'css/jquery.emojipicker.g.css',
+        'css/jquery.emojipicker.tw.css',
     ];
     public $js = [
+        'script/emojipicker.js',
+        'script/emojis.js',
         'script/script.js',
     ];
     public $depends = [

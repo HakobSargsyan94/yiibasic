@@ -30,6 +30,7 @@ if (!empty($checkCom)) {
 } else {
     $blueD = 'lightgrey';
 } ?>
+
 <div class='row' style='margin-top: 64px'>
     <div class='col-sm-1'>
     </div>
@@ -161,9 +162,9 @@ if (!empty($checkCom)) {
                         <div class='commentsPlace <?= $statusZ?>' data-commentId='<?= $comment->id ?>' style='margin-bottom: 15px;font-size: 16px;background-color: #ffffff;padding:5px;border-radius: 5px'>
 
                     <div style="font-size: 12px;margin: 10px auto"></div>
+                            <?php $from = '';?>
                             <?php foreach ($comments as $comId) : ?>
-                            <?php if ($comId['id'] == $comment['reply']) :?>
-                            <?php $to = $comment->user->username; ?>
+                            <?php if ($comId['id'] == $comment['reply']) : ?>
                             <?php $from =  ' <i class="fas fa-arrow-right" style="color: #25af36"></i> ' . $comId->user->username; ?>
                             <?php endif;?>
                             <?php endforeach;?>
@@ -628,13 +629,15 @@ if (!empty($checkCom)) {
                 </div>
             <?php endforeach; ?>
         </div>
-        <svg width="24" height="24" viewBox="0 0 24 24">
 
-        </svg>
+
+
         <div class="" style="display: <?= $display ?>">
             <?php $form = ActiveForm::begin(['id' => 'comment-form', 'options' => ['enctype' => 'multipart/form-data']]); ?>
             <div class="formDivForComment">
+
                 <span class="userNameReply" style="padding: 6px;"></span>
+
                 <?= $form->field($model, 'comment')->textarea(['style' => 'box-shadow: none;'])->label(" ") ?>
                 <?= $form->field($model, 'user_id')->hiddenInput(['value' => $_SESSION['__id']])->label(' ') ?>
                 <?= $form->field($model, 'task_id')->hiddenInput(['value' => $res['id']])->label(' ') ?>

@@ -396,6 +396,7 @@ class SiteController extends Controller
 
 
     public function actionAddComment ($id=null,$comId=null) {
+
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
        /* $commentWords = $_POST['Comments']['comment'];
         $comment = explode(' ',$commentWords);
@@ -416,7 +417,6 @@ class SiteController extends Controller
             $comment->user_id = $post['user_id'];
             $comment->task_id = $post['task_id'];
             $comment->reply = $comId;
-
             if($comment->save()) {
 
 

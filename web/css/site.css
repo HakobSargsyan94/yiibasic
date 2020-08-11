@@ -387,3 +387,20 @@ svg {
     border-radius: 4px;
 }
 
+.emojiPickerIconWrap {
+    top: -21px;
+    right: -182px;
+    z-index: 3000;
+}
+
+.emojiPickerIconWrap .form-control{
+    margin-top: 0;
+}
+.emojiPickerIconWrap {
+    position: relative;
+    left: 10px;
+    width: 127%;
+}
+.emojiPickerIconWrap textarea{
+   max-width: 590px;
+}

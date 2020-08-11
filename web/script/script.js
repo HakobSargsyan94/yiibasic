@@ -473,12 +473,14 @@ $(document).ready(()=>{
     });
 
     $('body').on('click','.replyButton', function() {
+        $('html').animate({ scrollTop: 15000}, 300);
         let self = $(this);
 
         let comId = $(this).closest('.commentsPlace').attr('data-commentId');
         let user_name = self.closest('.commentsPlace').find('.commentUserName')[0].innerText;
         $('.userNameReply').html(user_name);
         $('.replyValue').val(comId);
+
     });
 
     function delComments () {
@@ -539,5 +541,39 @@ $(document).ready(()=>{
         });
     });*/
 
+    $('textarea').emojiPicker();
+    $('#input-default').emojiPicker();
 
+    $('#input-custom-size').emojiPicker({
+        width: '300px',
+        height: '200px'
+    });
+
+    $('#input-left-position').emojiPicker({
+        position: 'left'
+    });
+
+    $('#create').click(function(e) {
+        e.preventDefault();
+        $('#text-custom-trigger').emojiPicker({
+            width: '300px',
+            height: '200px',
+            button: false
+        });
+    });
+
+    $('#toggle').click(function(e) {
+        e.preventDefault();
+        $('#text-custom-trigger').emojiPicker('toggle');
+    });
+
+    $('#destroy').click(function(e) {
+        e.preventDefault();
+        $('#text-custom-trigger').emojiPicker('destroy');
+    })
+
+    // keyup event is fired
+    $(".emojiable-question, .emojiable-option").on("keyup", function () {
+        //console.log("emoji added, input val() is: " + $(this).val());
+    });
 });

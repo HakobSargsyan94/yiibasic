@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cd87f007dcd9d8cf647fb718b0384f8",
+    "content-hash": "3c0bb7ec6843bf1726d3dabeea47e1be",
     "packages": [
+        {
+            "name": "abei2017/yii2-emoji",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abei2017/yii2-emoji.git",
+                "reference": "bbe689e23265cd165f74d3b16a3150d21aac7736"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abei2017/yii2-emoji/zipball/bbe689e23265cd165f74d3b16a3150d21aac7736",
+                "reference": "bbe689e23265cd165f74d3b16a3150d21aac7736",
+                "shasum": ""
+            },
+            "require": {
+                "emojione/emojione": "^3.1",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "abei2017\\emoji\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "abei",
+                    "email": "abei@nai8.me"
+                }
+            ],
+            "description": "一个yii2的emoji扩展",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "time": "2017-08-28T10:08:17+00:00"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.4.1",
@@ -32,7 +73,7 @@
             "version": "3.3.11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -53,7 +94,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -240,16 +281,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.18",
+            "version": "2.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "cfa3d44471c7f5bfb684ac2b0da7114283d78441"
+                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/cfa3d44471c7f5bfb684ac2b0da7114283d78441",
-                "reference": "cfa3d44471c7f5bfb684ac2b0da7114283d78441",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/840d5603eb84cc81a6a0382adac3293e57c1c64c",
+                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c",
                 "shasum": ""
             },
             "require": {
@@ -294,7 +335,51 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-06-16T20:11:17+00:00"
+            "time": "2020-08-08T21:28:19+00:00"
+        },
+        {
+            "name": "emojione/emojione",
+            "version": "3.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/emojione/emojione.git",
+                "reference": "85ee3eda3e7fe80a03ff7b440aa7718b048c1cc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/emojione/emojione/zipball/85ee3eda3e7fe80a03ff7b440aa7718b048c1cc5",
+                "reference": "85ee3eda3e7fe80a03ff7b440aa7718b048c1cc5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6 || ~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Emojione\\": "lib/php/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(CC-BY-4.0 and MIT)"
+            ],
+            "description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG format provided for the emoji images.",
+            "homepage": "http://www.emojione.com",
+            "keywords": [
+                "emoji",
+                "emojione",
+                "emojis",
+                "emoticons",
+                "smileys",
+                "smilies",
+                "unicode"
+            ],
+            "abandoned": true,
+            "time": "2018-07-11T21:35:32+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -925,16 +1010,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.36",
+            "version": "2.0.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "a557111ea6c27794b98c98b76ff3f127eb55f309"
+                "reference": "e8094d1aa9e807fbea970bc1360ab836ffb1b738"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/a557111ea6c27794b98c98b76ff3f127eb55f309",
-                "reference": "a557111ea6c27794b98c98b76ff3f127eb55f309",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e8094d1aa9e807fbea970bc1360ab836ffb1b738",
+                "reference": "e8094d1aa9e807fbea970bc1360ab836ffb1b738",
                 "shasum": ""
             },
             "require": {
@@ -1035,7 +1120,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-07T21:45:32+00:00"
+            "time": "2020-08-07T20:11:56+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
